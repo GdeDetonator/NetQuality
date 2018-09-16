@@ -111,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
         if (oOperator == -1) {
             Toast.makeText(getApplicationContext(), R.string.noSimCard, Toast.LENGTH_LONG).show();
         } else {
-            final SimInfo simInfo = getSimInfo();
+             simInfo = getSimInfo();
 
 
             locationListener = new LocationListener() {
@@ -166,7 +166,7 @@ public class MainActivity extends AppCompatActivity {
                 if (oOperator == -1) {
                     Toast.makeText(getApplicationContext(), R.string.noSimCard, Toast.LENGTH_LONG).show();
                 } else {
-                    final SimInfo simInfo = getSimInfo();
+                    simInfo = getSimInfo();
 
 
                     locationListener = new LocationListener() {
