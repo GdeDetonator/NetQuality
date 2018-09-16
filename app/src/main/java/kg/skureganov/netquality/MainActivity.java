@@ -88,17 +88,17 @@ public class MainActivity extends AppCompatActivity {
         locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
 
 
-//        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED &&
-//                ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-//            ActivityCompat.requestPermissions(this,
-//                    new String[]{Manifest.permission.READ_PHONE_STATE,
-//                            Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_CODE);
-//        } else {
-//
-//            allCells = telephonyManager.getAllCellInfo();
-//            checkOSimCard();
-//
-//        }
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED &&
+                ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.READ_PHONE_STATE,
+                            Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_CODE);
+        } else {
+
+            allCells = telephonyManager.getAllCellInfo();
+            checkOSimCard();
+
+        }
 
 
     }
@@ -108,45 +108,45 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-//        if (oOperator == -1) {
-//            Toast.makeText(getApplicationContext(), R.string.noSimCard, Toast.LENGTH_LONG).show();
-//        } else {
-//            final SimInfo simInfo = getSimInfo();
-//
-//
-//            locationListener = new LocationListener() {
-//                @Override
-//                public void onLocationChanged(Location location) {
-//                    simInfo.setLatitude(location.getLatitude());
-//                    simInfo.setLongitude(location.getLongitude());
-//                    setDataOnViews(simInfo);
-//                }
-//
-//                @Override
-//                public void onStatusChanged(String provider, int status, Bundle extras) {
-//
-//                }
-//
-//                @Override
-//                public void onProviderEnabled(String provider) {
-//                    Toast.makeText(getApplicationContext(), provider.toString(), Toast.LENGTH_LONG).show();
-//                }
-//
-//                @Override
-//                public void onProviderDisabled(String provider) {
-//                    if (ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED &&
-//                            ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-//
-//                    }
-//
-//                    Toast.makeText(getApplicationContext(), provider.toString(), Toast.LENGTH_LONG).show();
-//                }
-//            };
-//            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000, 0, locationListener);
-//
-//
-//            setDataOnViews(simInfo);
-//        }
+        if (oOperator == -1) {
+            Toast.makeText(getApplicationContext(), R.string.noSimCard, Toast.LENGTH_LONG).show();
+        } else {
+            final SimInfo simInfo = getSimInfo();
+
+
+            locationListener = new LocationListener() {
+                @Override
+                public void onLocationChanged(Location location) {
+                    simInfo.setLatitude(location.getLatitude());
+                    simInfo.setLongitude(location.getLongitude());
+                    setDataOnViews(simInfo);
+                }
+
+                @Override
+                public void onStatusChanged(String provider, int status, Bundle extras) {
+
+                }
+
+                @Override
+                public void onProviderEnabled(String provider) {
+                    Toast.makeText(getApplicationContext(), provider.toString(), Toast.LENGTH_LONG).show();
+                }
+
+                @Override
+                public void onProviderDisabled(String provider) {
+                    if (ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED &&
+                            ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+
+                    }
+
+                    Toast.makeText(getApplicationContext(), provider.toString(), Toast.LENGTH_LONG).show();
+                }
+            };
+            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000, 0, locationListener);
+
+
+            setDataOnViews(simInfo);
+        }
 
 
     }
