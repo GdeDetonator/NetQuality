@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">NetQuality</string>
+    <string name="imei">IMEI:</string>
+    <string name="operatorId">OperatorID:</string>
+    <string name="cellId">CID:</string>
+    <string name="lac">LAC:</string>
+    <string name="signal">Signal:</string>
+    <string name="latitude">Latitude:</string>
+    <string name="longitude">Longitude:</string>
+    <string name="network_type">Network Type:</string>
+    <string name="startSpeedTestButton">Start</string>
+    <string name="downloadLabel">Download:</string>
+    <string name="uploadSpeedLabel">Upload:</string>
+    <string name="speedteIsRuning">Speedtest is already running</string>
+    <string name="speedtestTitle">Speedtest</string>
+    <string name="noSimCard">O! SIM-Card is not available</string>
+</resources>
